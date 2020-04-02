@@ -19,10 +19,10 @@ export default class App extends React.Component {
                     
                     <Switch>
                         <Route path="/" exact component={Finder}/>
-                        <Route path="/:map" component={Map}/>
-                        <Route path="/:stats" component={Stats}/>
-                        <Route path="/:dua" component={Dua}/>
-                        <Route path="/:about" component={About}/>
+                        <Route path="/map" component={Map}/>
+                        <Route path="/stats" component={Stats}/>
+                        <Route path="/dua" component={Dua}/>
+                        <Route path="/about" component={About}/>
                     </Switch>
                 </div>
         </Router>
