@@ -6,14 +6,14 @@ import Map from './components/Map';
 import Stats from './components/Stats';
 import Dua from './components/Dua';
 import About from './components/About';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, HashRouter} from 'react-router-dom';
 
 
 export default class App extends React.Component {
 
     render(){
         return (
-            <Router>
+            <HashRouter>
                 <div className="container">
                     <Nav />
                     
@@ -25,7 +25,7 @@ export default class App extends React.Component {
                         <Route path="/about" component={About}/>
                     </Switch>
                 </div>
-        </Router>
+        </HashRouter>
         );
     }
 }
