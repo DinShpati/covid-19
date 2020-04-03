@@ -94,7 +94,6 @@ export default class Map extends React.Component {
         });
 
         //run once a day
-        console.log(hasOneDayPassed());
         if(hasOneDayPassed()){
         const colorArr = [];
         for(let i = 0; i < this.state.countrylong.length; i++){
@@ -126,11 +125,12 @@ export default class Map extends React.Component {
                         }
                     }catch(err){
                         console.log(err);
+                        colorArr.push('grey');
                     }
                     }
                 );
 
-                //await timer(100);
+                await timer(600);
         }
         this.setState({
             colorArr: colorArr
