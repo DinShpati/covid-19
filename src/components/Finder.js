@@ -104,7 +104,7 @@ export default class App extends React.Component {
         return (
                 <div className="container">
                     {this.isLoading()}
-                    <h1 className="mainHeader">Covid-19 Tracker</h1>
+                    <h1 className="mainHeader"><img src="https://p3cdn4static.sharpschool.com/UserFiles/Servers/Server_1051846/Image/News/coronavirus.png" alt="." style={{maxWidth: '50px'}}/>Covid-19 Tracker</h1>
 
                     <select name="" className="dropDown" onChange={this.getCountryData}>
                         <option value="Worldwide">Worldwide</option>

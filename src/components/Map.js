@@ -210,7 +210,7 @@ export default class Map extends React.Component {
     render(){
         return(
             <div className="container">
-                <h1 className="mainHeader">Covid-19 Map</h1>
+                <h1 className="mainHeader"><img src="https://p3cdn4static.sharpschool.com/UserFiles/Servers/Server_1051846/Image/News/coronavirus.png" alt="." style={{maxWidth: '50px'}}/>Covid-19 Map</h1>
                 <br/>
                 {this.isLoading()}
                 <div className="container2">

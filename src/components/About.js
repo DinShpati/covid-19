@@ -7,7 +7,7 @@ export default class About extends React.Component {
     render(){
         return(
             <div className="container">
-                <h1 className="mainHeader">About:</h1>
+                <h1 className="mainHeader"><img src="https://p3cdn4static.sharpschool.com/UserFiles/Servers/Server_1051846/Image/News/coronavirus.png" alt="." style={{maxWidth: '50px'}}/>About:</h1>
                 <div className="container4" align='left'>
                     <br/>
                     <br/>

@@ -7,7 +7,7 @@ export default class Dua extends React.Component {
     render(){
         return(
             <div className="container">
-                <h1 className="mainHeader">Dua / Supplication</h1>
+                <h1 className="mainHeader"><img src="https://p3cdn4static.sharpschool.com/UserFiles/Servers/Server_1051846/Image/News/coronavirus.png" alt="." style={{maxWidth: '50px'}}/>Dua / Supplication</h1>
                 <div className="container4">
                     <h2 className="englishDua">The Prophet Muhammad (May peace of Allah and His blessings be upon him) taught to recite the following Dua:</h2>
                     <br/><hr/><br/>

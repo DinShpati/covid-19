@@ -146,7 +146,7 @@ export default class App extends React.Component {
         return (
                 <div className="container">
                     {this.isLoading()}
-                    <h1 className="mainHeader">Stats</h1>
+                    <h1 className="mainHeader"><img src="https://p3cdn4static.sharpschool.com/UserFiles/Servers/Server_1051846/Image/News/coronavirus.png" alt="." style={{maxWidth: '50px'}}/>Stats</h1>
 
                     <div className="container3">
                         <img src="https://covid19.mathdro.id/api/og" alt="graph" className="graphImage"/>
