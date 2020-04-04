@@ -93,6 +93,10 @@ export default class Map extends React.Component {
             
         });
 
+        this.setState({
+            loading: false
+        });
+
         //run once a day
         if(hasOneDayPassed()){
         const colorArr = [];
@@ -111,16 +115,52 @@ export default class Map extends React.Component {
 
                             if(confirmed >= 200000){
                                 colorArr.push('#d422cb');
+                                new mapboxgl.Marker({
+                                    color: '#d422cb'
+                                })
+                                .setLngLat([this.state.countrylong[i], this.state.countrylat[i]])
+                                .addTo(map);
+
                             }else if(confirmed >= 100000){
                                 colorArr.push('#f43d46');
+                                new mapboxgl.Marker({
+                                    color: '#f43d46'
+                                })
+                                .setLngLat([this.state.countrylong[i], this.state.countrylat[i]])
+                                .addTo(map);
+
                             }else if(confirmed >= 50000){
                                 colorArr.push('#da7a3c');
+                                new mapboxgl.Marker({
+                                    color: '#da7a3c'
+                                })
+                                .setLngLat([this.state.countrylong[i], this.state.countrylat[i]])
+                                .addTo(map);
+
                             }else if(confirmed >= 10000){
                                 colorArr.push('#cac633');
+                                new mapboxgl.Marker({
+                                    color: '#cac633'
+                                })
+                                .setLngLat([this.state.countrylong[i], this.state.countrylat[i]])
+                                .addTo(map);
+
                             }else if(confirmed >= 1000){
                                 colorArr.push('#44a2c2');
+                                new mapboxgl.Marker({
+                                    color: '#44a2c2'
+                                })
+                                .setLngLat([this.state.countrylong[i], this.state.countrylat[i]])
+                                .addTo(map);
+
                             }else{
                                 colorArr.push('grey');
+                                new mapboxgl.Marker({
+                                    color: 'grey'
+                                })
+                                .setLngLat([this.state.countrylong[i], this.state.countrylat[i]])
+                                .addTo(map);
+
                             }
                         }
                     }catch(err){
@@ -138,23 +178,21 @@ export default class Map extends React.Component {
 
     }
 
-        const colorArrConfirmed = this.state.colorArr
+        const colorArrConfirmed = this.state.colorArr;
         //const colorArrConfirmed = ["grey","grey","grey","grey","grey","grey","grey","grey","grey","#cac633","grey","grey","grey","grey","grey","grey","#cac633","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","#da7a3c","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","#da7a3c","grey","grey","grey","#da7a3c","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","#cac633","grey","grey","grey","#f43d46","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","#cac633","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","#f43d46","grey","grey","grey","grey","#cac633","grey","grey","grey","grey","grey","grey","grey","grey","#cac633","#f43d46","grey","grey","grey","#cac633","grey","grey","grey","grey","grey","grey","grey"];
 
-        for(var k = 0; k < this.state.countrylong.length; k++){
+        // for(var k = 0; k < this.state.countrylong.length; k++){
             
-            new mapboxgl.Marker({
-                color: colorArrConfirmed[k]
-            })
-            .setLngLat([this.state.countrylong[k], this.state.countrylat[k]])
-            .addTo(map);
-        }
-        console.log(this.state.colorArr[0]);
-        console.log(this.state.colorArr);
+        //     // new mapboxgl.Marker({
+        //     //     color: colorArrConfirmed[k]
+        //     // })
+        //     // .setLngLat([this.state.countrylong[k], this.state.countrylat[k]])
+        //     // .addTo(map);
+        // }
+        // console.log(this.state.colorArr[0]);
+        // console.log(this.state.colorArr);
 
-        this.setState({
-            loading: false
-        });
+        
     }
 
     async getColors(){
