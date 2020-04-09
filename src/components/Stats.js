@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import Loader from './Loader';
+import Chart from './Charts'
 import '../style.css';
 
 export default class App extends React.Component {
@@ -152,8 +153,9 @@ export default class App extends React.Component {
                         <img src="https://covid19.mathdro.id/api/og" alt="graph" className="graphImage"/>
                         <hr/>
                         <ul className="top10Container">
-                            <h2>More comming soon!</h2>
+                            {/* <h2>More comming soon!</h2> */}
                             <br/>
+                            <Chart />  
                         </ul>
                     </div>
                 </div>
