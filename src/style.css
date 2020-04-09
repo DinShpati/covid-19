@@ -239,6 +239,8 @@
     color: rgb(206, 177, 98);
 }
 
+/* Charts */
+
 @media screen and (min-width: 1200px){
     .flex{
         flex-wrap: nowrap;

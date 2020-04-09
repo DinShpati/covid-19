@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Axios from 'axios';
 import Loader from './Loader';
 import {Bar, Line, Pie, Doughnut} from 'react-chartjs-2';
 import '../style.css';
 import { Component } from 'react';
+import Media from 'react-media';
+
 
 class Chart extends Component{
 
@@ -36,7 +38,7 @@ class Chart extends Component{
                     {
                         label: 'Global Cases',
                         data:[
-                            0, 0, 0
+                            100, 30, 5
                         ],
                         backgroundColor: ['rgba(90, 189, 202, 0.603)', 'rgba(81, 161, 44, 0.603)', 'rgba(223, 71, 71, .9)']
                     }
@@ -99,10 +101,99 @@ class Chart extends Component{
     render(){
         return(
             <div className="chart">
-                <Pie
+
+                <div>
+                        <Media queries={{ small: { maxWidth: 900 } }}>
+                        {matches =>
+                            matches.small ? ( //less than
+                            
+                                <div>
+                                <Pie
+                                    data={this.state.globalPieData}
+                                    width={10}
+                                    height={10}
+                                    options={{ maintainAspectRatio: true, 
+                                            title:{
+                                                display: this.props.displayTitle,
+                                                text: 'Global Cases',
+                                                fontSize: 25,
+                                                fontColor: 'white'
+                                            },
+                                            legend:{
+                                                display: this.props.displayLegend,
+                                                position: 'bottom'
+                                            }
+                                }}
+                                />
+                                <br/>
+                                <Bar
+                                    data={this.state.chartData}
+                                    width={50}
+                                    height={40}
+                                    options={{ maintainAspectRatio: true, 
+                                            title:{
+                                                display: this.props.displayTitle,
+                                                text: 'Top Countries With Confirmed Cases',
+                                                fontSize: 25,
+                                                fontColor: 'white'
+                                            },
+                                            legend:{
+                                                display: false,
+                                                position: this.props.legendPosition
+                                            }
+                                }}
+                                />
+                                <br/>
+                                </div>
+
+                            ) : ( //Greater than
+                                <div>
+                                <Pie
+                                    data={this.state.globalPieData}
+                                    // width={10}
+                                    // height={10}
+                                    options={{ maintainAspectRatio: true, 
+                                            title:{
+                                                display: this.props.displayTitle,
+                                                text: 'Global Cases',
+                                                fontSize: 25,
+                                                fontColor: 'white'
+                                            },
+                                            legend:{
+                                                display: this.props.displayLegend,
+                                                position: this.props.legendPosition
+                                            }
+                                }}
+                                />
+                                <br/>
+                                <Bar
+                                    data={this.state.chartData}
+                                    // width={50}
+                                    // height={50}
+                                    options={{ maintainAspectRatio: true, 
+                                            title:{
+                                                display: this.props.displayTitle,
+                                                text: 'Top Countries With Confirmed Cases',
+                                                fontSize: 25,
+                                                fontColor: 'white'
+                                            },
+                                            legend:{
+                                                display: false,
+                                                position: this.props.legendPosition
+                                            }
+                                }}
+                                />
+                                <br/>
+                                </div>
+                            )
+                        }
+                        </Media>
+                    </div>
+
+                {/*<Pie
                     data={this.state.globalPieData}
-                    // width={100}
-                    // height={50}
+                    // width={10}
+                    // height={10}
                     options={{ maintainAspectRatio: true, 
                               title:{
                                   display: this.props.displayTitle,
@@ -119,7 +210,7 @@ class Chart extends Component{
                 <br/>
                 <Bar
                     data={this.state.chartData}
-                    // width={100}
+                    // width={50}
                     // height={50}
                     options={{ maintainAspectRatio: true, 
                               title:{
@@ -135,7 +226,7 @@ class Chart extends Component{
                 }}
                 />
                 <br/>
-                {/* <Line
+                 <Line
                     data={this.state.totalLineChart}
                     // width={600}
                     // height={250}

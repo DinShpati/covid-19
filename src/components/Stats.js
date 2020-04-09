@@ -3,6 +3,8 @@ import Axios from 'axios';
 import Loader from './Loader';
 import Chart from './Charts'
 import '../style.css';
+import Media from 'react-media';
+
 
 export default class App extends React.Component {
 
